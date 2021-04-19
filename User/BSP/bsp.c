@@ -44,7 +44,6 @@
 *********************************************************************************************************
 */
 
-
 /*
 *********************************************************************************************************
 *                                           LOCAL CONSTANTS
@@ -160,13 +159,54 @@ CPU_INT32U  BSP_CPU_ClkFreq_MHz;
 
 void  BSP_Init (void)
 {
-	NVIC_PriorityGroupConfig( NVIC_PriorityGroup_4);
+	u8 i;
+		//LED初始化
+	LED_Init();
+	for(i=0;i<8;i++)
+	{
+		RGB_LED_Write_24Bits(0xff, 0xff, 0xff);
+	}
+	for(i=0;i<24;i++)
+	{
+		RGB_LED_Write_24Bits_2(0,0 , 0);
+	}
+	
+//	while(1);
+	//中断管理
+	NVIC_PriorityGroupConfig( NVIC_PriorityGroup_2);
+	//蓝牙串口
+	uart_init(9600);
+	usart2_init(115200);
+
+	//延时函数初始化
 	delay_init();
+	//OLED初始化
 	OLED_Init();
+	//MPU初始化
 	MPU6050_Init();
-	LED_Init (); 
+	
+
+	GY_IIC_Init();
+	MS5837_30BA_PROM();
+	//pid初始化
+	PidParameter_init();
+	
+	//电机驱动初始化 
+	MOTOR_Init();
+
+	Moto_Pwm(200,200,200,200);
+	TIM1->CCR1=200;
+	TIM1->CCR4=200;
+	delay_ms(5000);
+	
+	Moto_Pwm(150,150,150,150);
+	TIM1->CCR1=150;
+	TIM1->CCR4=150;
+	delay_ms(4000);
+	
 	
 }
+
 
 
 /*

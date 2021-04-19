@@ -3,7 +3,11 @@
 
 #include "imu.h"
 
+//Ω«∂»≤ÓPID 
+extern PID_TYPE   PID_Angle;
 
+//Œª“∆≤ÓPID 
+extern PID_TYPE   PID_Move;
 typedef struct  
 { 
 	float kp,ki,kd,
@@ -15,8 +19,5 @@ typedef struct
 
 void PidParameter_init(void);
 void PID_Postion_Cal(PID_TYPE*PID,float target,float measure);
-void DefaultParams(void);
-void TableToParams(void);
-float pidUpdate(PidObject* pid,float error);
 
 #endif

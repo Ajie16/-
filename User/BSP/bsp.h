@@ -77,10 +77,18 @@
 
 #include "bsp_led.h"           // Modified by fire (没有使用评估板的板载驱动，使用自己的裸机板载驱动文件)
 
+#include "delay.h"
+#include "usart.h"
+#include "sys.h"
 #include "oled.h"
 #include "mpu6050.h"
 #include "pid.h"
 #include "control.h"
+#include "myiic.h"
+#include "MS5837.h"
+#include "motor.h"
+#include "filter.h"
+#include "usart2.h"
 /*
 *********************************************************************************************************
 *                                          GPIO PIN DEFINITIONS

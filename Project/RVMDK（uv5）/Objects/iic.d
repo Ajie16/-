@@ -29,5 +29,5 @@
 .\objects\iic.o: ..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h
 .\objects\iic.o: ..\..\Libraries\FWlib\inc\misc.h
 .\objects\iic.o: ..\..\HARDWARE\iic.h
-.\objects\iic.o: ..\..\HARDWARE\delay.h
-.\objects\iic.o: ..\..\HARDWARE\sys.h
+.\objects\iic.o: ..\..\SYSTEM\delay\delay.h
+.\objects\iic.o: ..\..\SYSTEM\sys\sys.h

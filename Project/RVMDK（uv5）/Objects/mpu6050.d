@@ -30,8 +30,8 @@
 .\objects\mpu6050.o: ..\..\Libraries\FWlib\inc\misc.h
 .\objects\mpu6050.o: ..\..\HARDWARE\MPU6050.h
 .\objects\mpu6050.o: ..\..\HARDWARE\iic.h
-.\objects\mpu6050.o: ..\..\HARDWARE\delay.h
-.\objects\mpu6050.o: ..\..\HARDWARE\sys.h
+.\objects\mpu6050.o: ..\..\SYSTEM\delay\delay.h
+.\objects\mpu6050.o: ..\..\SYSTEM\sys\sys.h
 .\objects\mpu6050.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\mpu6050.o: ..\..\HARDWARE\IMU\structconfig.h
 .\objects\mpu6050.o: ..\..\HARDWARE\oled.h

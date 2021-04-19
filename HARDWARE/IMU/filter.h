@@ -7,6 +7,8 @@
 float Low_Filter(float value);
 void SortAver_Filter(float value,float *filter,uint8_t N);
 void  SortAver_Filter1(float value,float *filter,uint8_t n);
+void  SortAver_Filter2(float value,u8 *filter,uint8_t n);
+
 void  SortAver_FilterXYZ(INT16_XYZ *acc,FLOAT_XYZ *Acc_filt,uint8_t N);
 void Aver_FilterXYZ6(INT16_XYZ *acc,INT16_XYZ *gry,FLOAT_XYZ *Acc_filt,FLOAT_XYZ *Gry_filt,uint8_t N);
 void Aver_FilterXYZ(INT16_XYZ *acc,FLOAT_XYZ *Acc_filt,uint8_t N);

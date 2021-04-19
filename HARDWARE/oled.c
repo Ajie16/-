@@ -70,7 +70,7 @@ void OLED_WR_Byte(u8 dat,u8 cmd)
 		if(dat&0x80)OLED_SDIN=1;
 		else OLED_SDIN=0;
 		OLED_SCLK=1;
-		dat<<=1;   
+		dat<<=1; 
 	}				 
 	OLED_CS=1;		  
 	OLED_RS=1;   	  

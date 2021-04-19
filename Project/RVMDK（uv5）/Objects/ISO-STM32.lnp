@@ -59,15 +59,20 @@
 ".\objects\os_cpu_a.o"
 ".\objects\os_cpu_c.o"
 ".\objects\oled.o"
-".\objects\delay.o"
-".\objects\sys.o"
 ".\objects\mpu6050.o"
 ".\objects\pid.o"
 ".\objects\iic.o"
 ".\objects\control.o"
+".\objects\usart2.o"
+".\objects\motor.o"
 ".\objects\filter.o"
 ".\objects\imu.o"
+".\objects\ms5837.o"
+".\objects\myiic.o"
+".\objects\delay.o"
+".\objects\sys.o"
+".\objects\usart.o"
 --strict --scatter ".\Objects\ISO-STM32.sct"
---summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\Listings\ISO-STM32.map" -o .\Objects\ISO-STM32.axf

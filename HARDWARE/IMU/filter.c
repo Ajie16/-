@@ -67,21 +67,21 @@ float FindPos(float*a,int low,int high)
 *******************************************************************************/
 void  SortAver_Filter(float value,float *filter,uint8_t n)
 {
-	static float buf[N] = {0.0};
-	static uint8_t cnt =0,flag = 1;
+	static float buf1[N] = {0.0};
+	static uint8_t cnt1 =0,flag1 = 1;
 	float temp=0;
 	uint8_t i=0;
-	buf[cnt++] = value;
-	if(cnt<n && flag) 
+	buf1[cnt1++] = value;
+	if(cnt1<n && flag1) 
 		return;  //数组填不满不计算	
-	else flag=0; 
-	QuiteSort(buf,0,n-1);
+	else flag1=0; 
+	QuiteSort(buf1,0,n-1);
 	for(i=1;i<n-1;i++)
 	 {
-		temp += buf[i];
+		temp += buf1[i];
 	 }
 
-	 if(cnt>=n) cnt = 0;
+	 if(cnt1>=n) cnt1 = 0;
 
 	 *filter = temp/(n-2);
 }
@@ -114,6 +114,46 @@ void  SortAver_Filter1(float value,float *filter,uint8_t n)
 	 
 	*filter = temp/(n-2);
 
+}
+
+
+/*******************************************************************************
+* 函  数 ：float  SortAver_Filter1(float value)
+* 功  能 ：去最值平均值滤波一组数据
+* 参  数 ：value 采样的数据
+*		   *filter 滤波以后的数据地址
+* 返回值 ：无
+* 备  注 : 无
+*******************************************************************************/
+void  SortAver_Filter2(float value,u8 *filter,uint8_t n)
+{
+	static float buf2[N];
+	static uint8_t cnt2 =0 ,flag2 = 1;
+	u8 x=0,y=0,z=0;
+	uint8_t i;
+	buf2[cnt2++] = value;
+	if(cnt2<n && flag2) 
+		return;   //数组填不满不计算
+	else
+		flag2 = 0;
+	for(i=0;i<n;i++)
+	{
+		if(buf2[i] == 0)
+			x++;
+		else if(buf2[i] == 1)
+			y++;
+		else
+			z++;
+	}
+	if(cnt2>=n) cnt2 = 0;
+	 
+	if(x>y && x>z)
+		*filter = 0;
+	else if(x<y && z<y)
+		*filter = 1;
+	else
+		*filter = 2;
+		
 }
 
 /********************************************************************************

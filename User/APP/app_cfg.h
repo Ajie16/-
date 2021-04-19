@@ -48,8 +48,13 @@
 */
 
 #define  APP_TASK_START_PRIO                        2
-#define  OLED_TASK_PRIO                             3
-#define  Control_TASK_PRIO                          5
+#define  OLED_TASK_PRIO                             15
+#define  Control_TASK_PRIO                          11
+#define  Led_TASK_PRIO                          		10
+#define  Bluetooth_TASK_PRIO                        6
+
+#define  MS5837_TASK_PRIO                       	  7
+
 /*
 *********************************************************************************************************
 *                                            TASK STACK SIZES
@@ -58,8 +63,11 @@
 */
 
 #define  APP_TASK_START_STK_SIZE                    128
-#define  OLED_TASK_SIZE                             128
-#define  Control_TASK_SIZE                          128
+#define  OLED_TASK_SIZE                             256
+#define  Control_TASK_SIZE                          512
+#define  Led_TASK_SIZE                          		128
+#define  Bluetooth_TASK_SIZE                        512
+#define  MS5837_TASK_SIZE                        		256
 
 /*
 *********************************************************************************************************

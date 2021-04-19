@@ -2,11 +2,11 @@
 #define   _IIC_H
 #include "stdint.h"
 
-#define SCL_H         GPIOB->BSRR = GPIO_Pin_10
-#define SCL_L         GPIOB->BRR  = GPIO_Pin_10
-#define SDA_H         GPIOB->BSRR = GPIO_Pin_11 
-#define SDA_L         GPIOB->BRR  = GPIO_Pin_11
-#define SDA_read      ((GPIOB->IDR & GPIO_Pin_11)!=0)?1:0 //这段绝了
+#define SCL_H         GPIOB->BSRR = GPIO_Pin_5
+#define SCL_L         GPIOB->BRR  = GPIO_Pin_5
+#define SDA_H         GPIOB->BSRR = GPIO_Pin_6 
+#define SDA_L         GPIOB->BRR  = GPIO_Pin_6
+#define SDA_read      ((GPIOB->IDR & GPIO_Pin_6)!=0)?1:0 //这段绝了
 
 void IIC_GPIO_Init(void);        //初始化IIC的IO口				 
 void IIC_Start(void);			 //发送IIC开始信号

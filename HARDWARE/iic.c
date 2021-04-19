@@ -24,12 +24,12 @@ void IIC_GPIO_Init(void)
 	
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB,ENABLE);   
 	
-	GPIO_InitStruct.GPIO_Pin=GPIO_Pin_10|GPIO_Pin_11; 
+	GPIO_InitStruct.GPIO_Pin=GPIO_Pin_5|GPIO_Pin_6; 
 	GPIO_InitStruct.GPIO_Mode=GPIO_Mode_Out_PP; 
 	GPIO_InitStruct.GPIO_Speed=GPIO_Speed_50MHz;  
 	GPIO_Init(GPIOB,&GPIO_InitStruct);
 	
-	GPIO_SetBits(GPIOB,GPIO_Pin_10|GPIO_Pin_11);
+	GPIO_SetBits(GPIOB,GPIO_Pin_5|GPIO_Pin_6);
 }
 
 /******************************************************************************
@@ -45,7 +45,7 @@ void SDA_OUT(void)
 	
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB,ENABLE);
 	
-	GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_11 ;
+	GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_6 ;
 	GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_Out_PP;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
@@ -64,7 +64,7 @@ void SDA_IN(void)
 	
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB,ENABLE);
 	
-	GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_11;
+	GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_6;
 	GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_IN_FLOATING;
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
 }
